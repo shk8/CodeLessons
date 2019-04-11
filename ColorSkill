@@ -23,7 +23,7 @@ const handlers = {
     },  
     'NameIntent': function () {
         var anyName = this.event.request.intent.slots.anyName.value;
-        var speechOutput = "Nice to meet you " + anyName;
+        var speechOutput = "Nice to meet you " + anyName + ". I will remember your name until you leave this intent";
         var speechReprompt = "If you don't know what to do, try telling me your name";
         this.response.speak(speechOutput).listen(speechReprompt);
         this.emit(':responseReady');
